@@ -10,7 +10,7 @@
   --dark-grey: #121212;
   --light-grey: #d3d3d3;
   --white: #ffffff;
-  --accent-teal: #50d8d7;
+  --accent-teal: #ffffff;
   --accent-pink: #ffb6c1;
 
   /* Theme-specific colors */
@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -67,7 +67,8 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: 200;
+  font-family: 'Lora', serif;
+  font-weight: 400;
   text-transform: lowercase;
   letter-spacing: -0.02em;
 }
@@ -113,8 +114,9 @@ p {
 }
 
 .logo {
+  font-family: 'Lora', serif;
   font-size: 1.2rem;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: lowercase;
   letter-spacing: 1px;
   color: var(--text-primary);
@@ -461,9 +463,9 @@ p {
 
 /* Custom Cursor */
 .cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent-teal);
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--white);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -475,27 +477,9 @@ p {
   display: none;
 }
 
-.cursor::after {
-  content: "";
-  width: 4px;
-  height: 4px;
-  background: var(--accent-teal);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@media (pointer: fine) {
-  .cursor {
-    display: block;
-  }
-}
-
 .cursor.hover {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-width: 1px;
 }
 
