@@ -155,7 +155,7 @@ p {
   width: 100%;
 }
 
-/* Diagonal Sections */
+/* Sections (formerly diagonal) */
 .diagonal-container {
   position: relative;
   width: 100%;
@@ -170,17 +170,40 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  transform: skewY(-5deg);
-  transform-origin: 100%;
+  transform: none !important;
   background-color: var(--bg-primary);
   z-index: -1;
-  transition: transform 0.5s var(--transition-smooth);
 }
 
 .diagonal-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 8rem 5%;
+}
+
+/* Override any remaining diagonal transforms */
+.diagonal-container,
+.diagonal-container::before,
+.tagline-section .diagonal-container::before,
+.work-section .diagonal-container::before,
+.about-section .diagonal-container::before,
+.contact-section .diagonal-container::before {
+  transform: none !important;
+}
+
+/* Section specific overrides */
+.tagline-section,
+.work-section,
+.about-section,
+.contact-section {
+  background-color: var(--bg-primary);
+}
+
+.tagline-section .diagonal-container,
+.work-section .diagonal-container,
+.about-section .diagonal-container,
+.contact-section .diagonal-container {
+  background-color: inherit;
 }
 
 /* Hero Section */
@@ -641,4 +664,28 @@ footer {
 
 [data-theme="dark"] #contact-form button {
   color: var(--dark-grey);
+}
+
+/* Ensure no transforms on any sections */
+section,
+.diagonal-container,
+.diagonal-content,
+.diagonal-container::before {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Section specific overrides */
+.tagline-section,
+.work-section,
+.about-section,
+.contact-section {
+  background-color: var(--bg-primary);
+}
+
+.tagline-section .diagonal-container,
+.work-section .diagonal-container,
+.about-section .diagonal-container,
+.contact-section .diagonal-container {
+  background-color: inherit;
 }
