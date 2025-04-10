@@ -156,14 +156,14 @@ p {
 }
 
 /* Sections (formerly diagonal) */
-.diagonal-container {
+.straight-container {
   position: relative;
   width: 100%;
   overflow: hidden;
   background-color: var(--bg-primary);
 }
 
-.diagonal-container::before {
+.straight-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -175,19 +175,19 @@ p {
   z-index: -1;
 }
 
-.diagonal-content {
+.straight-content {
   max-width: 1400px;
   margin: 0 auto;
   padding: 8rem 5%;
 }
 
 /* Override any remaining diagonal transforms */
-.diagonal-container,
-.diagonal-container::before,
-.tagline-section .diagonal-container::before,
-.work-section .diagonal-container::before,
-.about-section .diagonal-container::before,
-.contact-section .diagonal-container::before {
+.straight-container,
+.straight-container::before,
+.tagline-section .straight-container::before,
+.work-section .straight-container::before,
+.about-section .straight-container::before,
+.contact-section .straight-container::before {
   transform: none !important;
 }
 
@@ -199,10 +199,10 @@ p {
   background-color: var(--bg-primary);
 }
 
-.tagline-section .diagonal-container,
-.work-section .diagonal-container,
-.about-section .diagonal-container,
-.contact-section .diagonal-container {
+.tagline-section .straight-container,
+.work-section .straight-container,
+.about-section .straight-container,
+.contact-section .straight-container {
   background-color: inherit;
 }
 
@@ -244,15 +244,15 @@ p {
   text-align: center;
 }
 
-.tagline-section .diagonal-container {
+.tagline-section .straight-container {
   background-color: var(--bg-secondary);
 }
 
-.tagline-section .diagonal-container::before {
+.tagline-section .straight-container::before {
   background-color: var(--bg-secondary);
 }
 
-.tagline-section .diagonal-content {
+.tagline-section .straight-content {
   padding: 12rem 5%;
 }
 
@@ -261,11 +261,11 @@ p {
   background-color: var(--bg-primary);
 }
 
-.work-section .diagonal-container {
+.work-section .straight-container {
   background-color: var(--bg-primary);
 }
 
-.work-section .diagonal-container::before {
+.work-section .straight-container::before {
   background-color: var(--bg-primary);
 }
 
@@ -348,11 +348,11 @@ p {
   background-color: var(--bg-secondary);
 }
 
-.about-section .diagonal-container {
+.about-section .straight-container {
   background-color: var(--bg-secondary);
 }
 
-.about-section .diagonal-container::before {
+.about-section .straight-container::before {
   background-color: var(--bg-secondary);
 }
 
@@ -402,11 +402,11 @@ p {
   color: var(--text-primary);
 }
 
-.contact-section .diagonal-container {
+.contact-section .straight-container {
   background-color: var(--bg-secondary);
 }
 
-.contact-section .diagonal-container::before {
+.contact-section .straight-container::before {
   background-color: var(--bg-secondary);
 }
 
