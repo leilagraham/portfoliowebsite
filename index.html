@@ -201,15 +201,17 @@
           <div class="straight-container">
           <div class="straight-content">
             <h2>Let's create something together!</h2>
-            <form id="contact-form">
+            <form id="contact-form" action="https://formspree.io/f/xaneavwg" method="POST">
               <input type="text" name="name" placeholder="name" required />
-              <input type="email" name="email" placeholder="email" required />
+              <input type="email" name="_replyto" placeholder="email" required />
               <textarea
                 name="message"
                 placeholder="tell me about your project"
                 required
               ></textarea>
-              <button type="submit">Send message</button>
+              <!-- Honeypot field to prevent spam -->
+              <input type="text" name="_gotcha" style="display:none" />
+              <button type="submit">send message</button>
             </form>
           </div>
         </div>
