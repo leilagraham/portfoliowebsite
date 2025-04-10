@@ -449,9 +449,9 @@ p {
 
 #contact-form button {
   padding: 1.2rem 2.5rem;
-  background: var(--accent-teal);
+  background: var(--white);
   color: var(--dark-grey);
-  border: none;
+  border: 1px solid var(--dark-grey);
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
@@ -462,26 +462,26 @@ p {
   overflow: hidden;
 }
 
-#contact-form button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--accent-pink);
-  transform: translateX(-100%);
-  transition: transform 0.3s var(--transition-smooth);
-  z-index: 0;
-}
-
-#contact-form button:hover::before {
-  transform: translateX(0);
+#contact-form button:hover {
+  background: var(--dark-grey);
+  color: var(--white);
 }
 
 #contact-form button span {
   position: relative;
   z-index: 1;
+}
+
+/* Dark mode button styles */
+[data-theme="dark"] #contact-form button {
+  background: var(--dark-grey);
+  color: var(--white);
+  border-color: var(--white);
+}
+
+[data-theme="dark"] #contact-form button:hover {
+  background: var(--white);
+  color: var(--dark-grey);
 }
 
 /* Custom Cursor */
@@ -660,10 +660,6 @@ footer {
 
 [data-theme="dark"] .profile-image {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="dark"] #contact-form button {
-  color: var(--dark-grey);
 }
 
 /* Ensure no transforms on any sections */
