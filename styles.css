@@ -546,7 +546,7 @@ footer {
     gap: 2rem;
   }
 
-  .diagonal-content {
+  .straight-content {
     padding: 6rem 5%;
   }
 
@@ -668,9 +668,9 @@ footer {
 
 /* Ensure no transforms on any sections */
 section,
-.diagonal-container,
-.diagonal-content,
-.diagonal-container::before {
+.straight-container,
+.straight-content,
+.straight-container::before {
   transform: none !important;
   transition: none !important;
 }
@@ -683,9 +683,9 @@ section,
   background-color: var(--bg-primary);
 }
 
-.tagline-section .diagonal-container,
-.work-section .diagonal-container,
-.about-section .diagonal-container,
-.contact-section .diagonal-container {
+.tagline-section .straight-container,
+.work-section .straight-container,
+.about-section .straight-container,
+.contact-section .straight-container {
   background-color: inherit;
 }
