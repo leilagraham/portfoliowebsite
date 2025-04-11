@@ -292,3 +292,23 @@ document.querySelectorAll(".work-item").forEach((item) => {
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("loaded");
 });
+
+// Back to Top Button functionality
+const backToTopButton = document.getElementById('back-to-top');
+
+// Show button when scrolling down 200px
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 200) {
+    backToTopButton.classList.add('visible');
+  } else {
+    backToTopButton.classList.remove('visible');
+  }
+});
+
+// Smooth scroll to top when clicked
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
