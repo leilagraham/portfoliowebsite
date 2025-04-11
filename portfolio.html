@@ -1,16 +1,153 @@
-<!-- Navigation -->
-<nav class="navbar">
-  <div class="logo">Leila Graham</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="portfolio.html">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Leila Graham</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <!-- [Previous theme toggle SVGs remain the same] -->
+    </button>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Leila Graham</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="portfolio.html">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="portfolio-hero" class="hero">
+        <div class="diagonal-container">
+          <div class="diagonal-content">
+            <h1>portfolio</h1>
+            <p class="hero-text">
+              Here, you can get a glimpse of what I do and love.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Navigation -->
+      <section class="category-nav">
+        <div class="diagonal-container">
+          <div class="diagonal-content">
+            <div class="category-links">
+              <a href="#videos">videos</a>
+              <a href="#photos">photos</a>
+              <a href="#design">graphic design</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos Section -->
+      <section id="videos" class="portfolio-section">
+        <div class="diagonal-container">
+          <div class="diagonal-content">
+            <h2>videos</h2>
+            <div class="portfolio-grid">
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?video,film,1" alt="Video Project 1" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?video,film,2" alt="Video Project 2" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photos Section -->
+      <section id="photos" class="portfolio-section">
+        <div class="diagonal-container">
+          <div class="diagonal-content">
+            <h2>photos</h2>
+            <div class="portfolio-grid">
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?photography,1" alt="Photo Project 1" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?photography,2" alt="Photo Project 2" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graphic Design Section -->
+      <section id="design" class="portfolio-section">
+        <div class="diagonal-container">
+          <div class="diagonal-content">
+            <h2>graphic design</h2>
+            <div class="portfolio-grid">
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?design,graphic,1" alt="Design Project 1" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+              <div class="portfolio-item">
+                <img src="https://source.unsplash.com/random/800x600?design,graphic,2" alt="Design Project 2" />
+                <div class="portfolio-overlay">
+                  <h3>project title</h3>
+                  <p>project description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 leila graham</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
