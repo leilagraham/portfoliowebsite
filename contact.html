@@ -50,13 +50,21 @@
       </svg>
     </button>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="logo">Leila Graham</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="burger">
@@ -69,10 +77,10 @@
     <main>
       <!-- Hero Section -->
       <section id="contact-hero" class="hero">
-        <div class="diagonal-container">
-          <div class="diagonal-content">
+        <div class="straight-container">
+          <div class="straight-content" style="text-align: center;">
             <h1>let's connect.</h1>
-            <p class="hero-text">
+            <p class="hero-text" style="margin-left: auto; margin-right: auto;">
               Ready to bring your vision to life? I'd love to hear about your project.
             </p>
           </div>
@@ -81,16 +89,18 @@
 
       <!-- Contact Form Section -->
       <section id="contact" class="contact-section">
-        <div class="diagonal-container">
-          <div class="diagonal-content">
-            <form id="contact-form">
+        <div class="straight-container">
+          <div class="straight-content">
+            <form id="contact-form" action="https://formspree.io/f/xaneavwg" method="POST">
               <input type="text" name="name" placeholder="name" required />
-              <input type="email" name="email" placeholder="email" required />
+              <input type="email" name="_replyto" placeholder="email" required />
               <textarea
                 name="message"
                 placeholder="tell me about your project"
                 required
               ></textarea>
+              <!-- Honeypot field to prevent spam -->
+              <input type="text" name="_gotcha" style="display:none" />
               <button type="submit">send message</button>
             </form>
           </div>
