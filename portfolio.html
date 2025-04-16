@@ -9,90 +9,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .portfolio-categories {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 4rem 0;
-      }
-
-      .category-link {
-        text-decoration: none;
-        color: var(--text-primary);
-        font-size: 1.2rem;
-        font-family: 'Lora', serif;
-        position: relative;
-        transition: all 0.3s ease;
-      }
-
-      .category-link::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: var(--accent-teal);
-        transition: width 0.3s ease;
-      }
-
-      .category-link:hover::after {
-        width: 100%;
-      }
-
       .portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        padding: 20px;
+        max-width: 1600px;
+        margin: 0 auto;
       }
 
       .portfolio-item {
         position: relative;
         overflow: hidden;
-        border-radius: 8px;
-        aspect-ratio: 3/4;
-        cursor: pointer;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: scale(1.02);
       }
 
       .portfolio-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        display: block;
       }
 
-      .portfolio-item:hover img {
-        transform: scale(1.05);
+      /* Specific grid placements */
+      .item-1 {
+        grid-column: span 6;
+        grid-row: span 2;
       }
 
-      .portfolio-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        padding: 2rem;
-        color: white;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
+      .item-2 {
+        grid-column: span 6;
+        grid-row: span 3;
       }
 
-      .portfolio-item:hover .portfolio-overlay {
-        opacity: 1;
-        transform: translateY(0);
+      .item-3 {
+        grid-column: span 8;
+        grid-row: span 2;
       }
 
-      .portfolio-overlay h3 {
-        font-family: 'Lora', serif;
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+      .item-4 {
+        grid-column: span 4;
+        grid-row: span 2;
       }
 
-      .portfolio-overlay p {
-        font-size: 1rem;
-        opacity: 0.9;
+      .item-5 {
+        grid-column: span 6;
+        grid-row: span 2;
+      }
+
+      .item-6 {
+        grid-column: span 6;
+        grid-row: span 2;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(6, 1fr);
+          gap: 15px;
+        }
+
+        .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
+          grid-column: span 3;
+          grid-row: span 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+
+        .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
+          grid-column: span 2;
+        }
       }
     </style>
   </head>
@@ -157,71 +153,26 @@
         </div>
       </section>
 
-      <!-- Portfolio Categories -->
+      <!-- Portfolio Grid -->
       <section class="portfolio-section">
-        <div class="straight-container">
-          <div class="straight-content">
-            <div class="portfolio-categories">
-              <a href="#videos" class="category-link">videos</a>
-              <a href="photography portfolio.html" class="category-link">photography</a>
-              <a href="#design" class="category-link">graphic design</a>
-            </div>
-
-            <!-- Videos Section -->
-            <section id="videos">
-              <h1>videos.</h1>
-              <div class="portfolio-grid">
-                <div class="portfolio-item">
-                  <img src="images/video-thumbnail-1.jpg" alt="Video Project 1" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Brand Campaign</h3>
-                    <p>A cinematic brand story for a lifestyle company</p>
-                  </div>
-                </div>
-                <div class="portfolio-item">
-                  <img src="images/video-thumbnail-2.jpg" alt="Video Project 2" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Social Media Content</h3>
-                    <p>Engaging short-form content for Instagram</p>
-                  </div>
-                </div>
-                <div class="portfolio-item">
-                  <img src="images/video-thumbnail-3.jpg" alt="Video Project 3" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Product Launch</h3>
-                    <p>Dynamic product showcase video</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Graphic Design Section -->
-            <section id="design">
-              <h1>graphic design.</h1>
-              <div class="portfolio-grid">
-                <div class="portfolio-item">
-                  <img src="images/design-1.jpg" alt="Design Project 1" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Brand Identity</h3>
-                    <p>Complete branding package for a boutique</p>
-                  </div>
-                </div>
-                <div class="portfolio-item">
-                  <img src="images/design-2.jpg" alt="Design Project 2" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Social Media Kit</h3>
-                    <p>Cohesive design templates for social platforms</p>
-                  </div>
-                </div>
-                <div class="portfolio-item">
-                  <img src="images/design-3.jpg" alt="Design Project 3" loading="lazy">
-                  <div class="portfolio-overlay">
-                    <h3>Print Design</h3>
-                    <p>Magazine layout and editorial design</p>
-                  </div>
-                </div>
-              </div>
-            </section>
+        <div class="portfolio-grid">
+          <div class="portfolio-item item-1">
+            <img src="images/photography portfolio 1.jpg" alt="Portfolio Image 1" loading="lazy">
+          </div>
+          <div class="portfolio-item item-2">
+            <img src="images/photography portfolio 2.jpg" alt="Portfolio Image 2" loading="lazy">
+          </div>
+          <div class="portfolio-item item-3">
+            <img src="images/photography portfolio 3.jpg" alt="Portfolio Image 3" loading="lazy">
+          </div>
+          <div class="portfolio-item item-4">
+            <img src="images/photography portfolio 4.jpg" alt="Portfolio Image 4" loading="lazy">
+          </div>
+          <div class="portfolio-item item-5">
+            <img src="images/photography portfolio 5.jpg" alt="Portfolio Image 5" loading="lazy">
+          </div>
+          <div class="portfolio-item item-6">
+            <img src="images/photography portfolio 6.jpg" alt="Portfolio Image 6" loading="lazy">
           </div>
         </div>
       </section>
