@@ -8,11 +8,111 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .portfolio-categories {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 4rem 0;
+      }
+
+      .category-link {
+        text-decoration: none;
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        font-family: 'Lora', serif;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .category-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--accent-teal);
+        transition: width 0.3s ease;
+      }
+
+      .category-link:hover::after {
+        width: 100%;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        aspect-ratio: 3/4;
+        cursor: pointer;
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        padding: 2rem;
+        color: white;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .portfolio-overlay h3 {
+        font-family: 'Lora', serif;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-overlay p {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" aria-label="Toggle dark mode">
-      <!-- [Previous theme toggle SVGs remain the same] -->
+      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
     </button>
 
     <!-- Back to Top Button -->
@@ -28,9 +128,14 @@
       <div class="logo">Leila Graham</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="portfolio.html">Portfolio</a>
+          <div class="dropdown-content">
+            <a href="photography portfolio.html">Photography</a>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="burger">
         <div class="line1"></div>
@@ -45,84 +150,78 @@
         <div class="straight-container">
           <div class="straight-content" style="text-align: center;">
             <h1>portfolio.</h1>
-            <p class="hero-text" style="margin-left: auto; margin-right: auto;">
-              Here, you can get a glimpse of what I do and love.
+            <p class="hero-text" style="margin-left: auto; margin-right: auto; max-width: 800px;">
+              A collection of my creative work in videography, photography, and design.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Videos Section -->
-      <section id="videos" class="portfolio-section">
+      <!-- Portfolio Categories -->
+      <section class="portfolio-section">
         <div class="straight-container">
           <div class="straight-content">
-            <h1>videos.</h1>
-            <div class="portfolio-grid">
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?video,film,1" alt="Video Project 1" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
-                </div>
-              </div>
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?video,film,2" alt="Video Project 2" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
-                </div>
-              </div>
+            <div class="portfolio-categories">
+              <a href="#videos" class="category-link">videos</a>
+              <a href="photography portfolio.html" class="category-link">photography</a>
+              <a href="#design" class="category-link">graphic design</a>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Photos Section -->
-      <section id="photos" class="portfolio-section">
-        <div class="straight-container">
-          <div class="straight-content">
-            <h1>photos.</h1>
-            <div class="portfolio-grid">
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?photography,1" alt="Photo Project 1" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
+            <!-- Videos Section -->
+            <section id="videos">
+              <h1>videos.</h1>
+              <div class="portfolio-grid">
+                <div class="portfolio-item">
+                  <img src="images/video-thumbnail-1.jpg" alt="Video Project 1" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Brand Campaign</h3>
+                    <p>A cinematic brand story for a lifestyle company</p>
+                  </div>
+                </div>
+                <div class="portfolio-item">
+                  <img src="images/video-thumbnail-2.jpg" alt="Video Project 2" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Social Media Content</h3>
+                    <p>Engaging short-form content for Instagram</p>
+                  </div>
+                </div>
+                <div class="portfolio-item">
+                  <img src="images/video-thumbnail-3.jpg" alt="Video Project 3" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Product Launch</h3>
+                    <p>Dynamic product showcase video</p>
+                  </div>
                 </div>
               </div>
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?photography,2" alt="Photo Project 2" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-      <!-- Graphic Design Section -->
-      <section id="design" class="portfolio-section">
-        <div class="straight-container">
-          <div class="straight-content">
-            <h1>graphic design.</h1>
-            <div class="portfolio-grid">
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?design,graphic,1" alt="Design Project 1" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
+            <!-- Graphic Design Section -->
+            <section id="design">
+              <h1>graphic design.</h1>
+              <div class="portfolio-grid">
+                <div class="portfolio-item">
+                  <img src="images/design-1.jpg" alt="Design Project 1" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Brand Identity</h3>
+                    <p>Complete branding package for a boutique</p>
+                  </div>
+                </div>
+                <div class="portfolio-item">
+                  <img src="images/design-2.jpg" alt="Design Project 2" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Social Media Kit</h3>
+                    <p>Cohesive design templates for social platforms</p>
+                  </div>
+                </div>
+                <div class="portfolio-item">
+                  <img src="images/design-3.jpg" alt="Design Project 3" loading="lazy">
+                  <div class="portfolio-overlay">
+                    <h3>Print Design</h3>
+                    <p>Magazine layout and editorial design</p>
+                  </div>
                 </div>
               </div>
-              <div class="portfolio-item">
-                <img src="https://source.unsplash.com/random/800x600?design,graphic,2" alt="Design Project 2" />
-                <div class="portfolio-overlay">
-                  <h3>project title</h3>
-                  <p>project description</p>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
       </section>
