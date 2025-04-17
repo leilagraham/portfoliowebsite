@@ -9,86 +9,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <style>
+      /* Override the default hero styles */
+      #portfolio-hero.hero {
+        min-height: auto !important;
+        padding-top: 120px;
+        padding-bottom: 60px;
+      }
+
+      /* Portfolio specific styles */
+      .portfolio-section {
+        padding: 0;
+        margin: 0 auto;
+        max-width: none;
+        background-color: var(--bg-primary);
+      }
+
       .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 20px;
-        padding: 20px;
-        max-width: 1600px;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 40px !important;
+        padding: 40px 5% !important;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
       .portfolio-item {
         position: relative;
-        overflow: hidden;
-        border-radius: 4px;
-        transition: transform 0.3s ease;
-      }
-
-      .portfolio-item:hover {
-        transform: scale(1.02);
+        width: 100%;
+        margin: 0;
+        padding: 0;
       }
 
       .portfolio-item img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
         display: block;
-      }
-
-      /* Specific grid placements */
-      .item-1 {
-        grid-column: span 6;
-        grid-row: span 2;
-      }
-
-      .item-2 {
-        grid-column: span 6;
-        grid-row: span 3;
-      }
-
-      .item-3 {
-        grid-column: span 8;
-        grid-row: span 2;
-      }
-
-      .item-4 {
-        grid-column: span 4;
-        grid-row: span 2;
-      }
-
-      .item-5 {
-        grid-column: span 6;
-        grid-row: span 2;
-      }
-
-      .item-6 {
-        grid-column: span 6;
-        grid-row: span 2;
+        object-fit: cover;
       }
 
       /* Responsive adjustments */
-      @media (max-width: 1024px) {
+      @media (max-width: 768px) {
         .portfolio-grid {
-          grid-template-columns: repeat(6, 1fr);
-          gap: 15px;
-        }
-
-        .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
-          grid-column: span 3;
-          grid-row: span 1;
+          grid-template-columns: 1fr !important;
+          gap: 20px !important;
         }
       }
 
-      @media (max-width: 768px) {
-        .portfolio-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-        }
+      /* Override any transform styles */
+      .straight-container,
+      .straight-container::before,
+      .portfolio-section .straight-container::before {
+        transform: none !important;
+      }
 
-        .item-1, .item-2, .item-3, .item-4, .item-5, .item-6 {
-          grid-column: span 2;
-        }
+      /* Override content padding */
+      .portfolio-section .straight-content {
+        padding: 0;
+        max-width: none;
       }
     </style>
   </head>
@@ -145,8 +122,8 @@
       <section id="portfolio-hero" class="hero">
         <div class="straight-container">
           <div class="straight-content" style="text-align: center;">
-            <h1>portfolio.</h1>
-            <p class="hero-text" style="margin-left: auto; margin-right: auto; max-width: 800px;">
+            <h1>photography</h1>
+            <p class="hero-text">
               A collection of my creative work in videography, photography, and design.
             </p>
           </div>
@@ -156,23 +133,23 @@
       <!-- Portfolio Grid -->
       <section class="portfolio-section">
         <div class="portfolio-grid">
-          <div class="portfolio-item item-1">
-            <img src="images/photography portfolio 1.jpg" alt="Portfolio Image 1" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 1.jpg" alt="Portfolio Image 1" loading="lazy">
           </div>
-          <div class="portfolio-item item-2">
-            <img src="images/photography portfolio 2.jpg" alt="Portfolio Image 2" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 2.jpg" alt="Portfolio Image 2" loading="lazy">
           </div>
-          <div class="portfolio-item item-3">
-            <img src="images/photography portfolio 3.jpg" alt="Portfolio Image 3" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 3.jpg" alt="Portfolio Image 3" loading="lazy">
           </div>
-          <div class="portfolio-item item-4">
-            <img src="images/photography portfolio 4.jpg" alt="Portfolio Image 4" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 4.jpg" alt="Portfolio Image 4" loading="lazy">
           </div>
-          <div class="portfolio-item item-5">
-            <img src="images/photography portfolio 5.jpg" alt="Portfolio Image 5" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 5.jpg" alt="Portfolio Image 5" loading="lazy">
           </div>
-          <div class="portfolio-item item-6">
-            <img src="images/photography portfolio 6.jpg" alt="Portfolio Image 6" loading="lazy">
+          <div class="portfolio-item">
+            <img src="photograph portfolio/photography portfolio 6.jpg" alt="Portfolio Image 6" loading="lazy">
           </div>
         </div>
       </section>
