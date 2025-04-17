@@ -241,9 +241,10 @@ p {
 
 .hero-text {
   max-width: 800px;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   color: var(--text-primary);
   position: relative;
+  text-align: center;
 }
 
 /* Tagline Section */
