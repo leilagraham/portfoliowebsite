@@ -9,63 +9,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /* Override the default hero styles */
+      /* Portfolio page styles */
       #portfolio-hero.hero {
         min-height: auto !important;
         padding-top: 120px;
         padding-bottom: 60px;
       }
 
-      /* Portfolio specific styles */
       .portfolio-section {
-        padding: 0;
-        margin: 0 auto;
-        max-width: none;
+        padding: 4rem 0;
         background-color: var(--bg-primary);
       }
 
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-family: 'Lora', serif;
+        font-size: 2rem;
+        color: var(--text-primary);
+      }
+
       .portfolio-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 40px !important;
-        padding: 40px 5% !important;
-        max-width: 1400px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+        padding: 20px 5%;
+        max-width: 1600px;
         margin: 0 auto;
       }
 
       .portfolio-item {
         position: relative;
-        width: 100%;
-        margin: 0;
-        padding: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: scale(1.02);
       }
 
       .portfolio-item img {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
         object-fit: cover;
+        display: block;
+      }
+
+      /* Grid placements for featured items */
+      .item-large {
+        grid-column: span 6;
+        grid-row: span 2;
+      }
+
+      .item-medium {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+
+      .item-small {
+        grid-column: span 3;
+        grid-row: span 1;
       }
 
       /* Responsive adjustments */
-      @media (max-width: 768px) {
+      @media (max-width: 1200px) {
         .portfolio-grid {
-          grid-template-columns: 1fr !important;
-          gap: 20px !important;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 15px;
+        }
+
+        .item-large {
+          grid-column: span 3;
+          grid-row: span 1;
+        }
+
+        .item-medium {
+          grid-column: span 3;
+          grid-row: span 1;
+        }
+
+        .item-small {
+          grid-column: span 3;
+          grid-row: span 1;
         }
       }
 
-      /* Override any transform styles */
-      .straight-container,
-      .straight-container::before,
-      .portfolio-section .straight-container::before {
-        transform: none !important;
-      }
+      @media (max-width: 768px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
 
-      /* Override content padding */
-      .portfolio-section .straight-content {
-        padding: 0;
-        max-width: none;
+        .item-large,
+        .item-medium,
+        .item-small {
+          grid-column: span 2;
+        }
       }
     </style>
   </head>
@@ -98,15 +138,10 @@
 
     <!-- Navigation -->
     <nav class="navbar">
-      <div class="logo">Leila Graham</div>
+      <a href="index.html" class="logo">Leila Graham</a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="portfolio.html">Portfolio</a>
-          <div class="dropdown-content">
-            <a href="photography portfolio.html">Photography</a>
-          </div>
-        </li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -122,9 +157,9 @@
       <section id="portfolio-hero" class="hero">
         <div class="straight-container">
           <div class="straight-content" style="text-align: center;">
-            <h1>photography</h1>
+            <h1>portfolio.</h1>
             <p class="hero-text">
-              A collection of my creative work in videography, photography, and design.
+              A collection of my creative work in photography and design.
             </p>
           </div>
         </div>
@@ -133,22 +168,22 @@
       <!-- Portfolio Grid -->
       <section class="portfolio-section">
         <div class="portfolio-grid">
-          <div class="portfolio-item">
+          <div class="portfolio-item item-large">
             <img src="photograph portfolio/photography portfolio 1.jpg" alt="Portfolio Image 1" loading="lazy">
           </div>
-          <div class="portfolio-item">
+          <div class="portfolio-item item-large">
             <img src="photograph portfolio/photography portfolio 2.jpg" alt="Portfolio Image 2" loading="lazy">
           </div>
-          <div class="portfolio-item">
+          <div class="portfolio-item item-medium">
             <img src="photograph portfolio/photography portfolio 3.jpg" alt="Portfolio Image 3" loading="lazy">
           </div>
-          <div class="portfolio-item">
+          <div class="portfolio-item item-medium">
             <img src="photograph portfolio/photography portfolio 4.jpg" alt="Portfolio Image 4" loading="lazy">
           </div>
-          <div class="portfolio-item">
+          <div class="portfolio-item item-medium">
             <img src="photograph portfolio/photography portfolio 5.jpg" alt="Portfolio Image 5" loading="lazy">
           </div>
-          <div class="portfolio-item">
+          <div class="portfolio-item item-medium">
             <img src="photograph portfolio/photography portfolio 6.jpg" alt="Portfolio Image 6" loading="lazy">
           </div>
         </div>
