@@ -799,3 +799,7 @@ section,
     gap: 0.5rem;
   }
 }
+
+.contact-section h2 {
+  text-align: center;
+}
