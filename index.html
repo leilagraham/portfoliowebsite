@@ -3,10 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leila Graham Portfolio</title>
+    <title>Leila Graham - Creative Professional Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Leila Graham - Creative professional specializing in videography, photography, and digital design. Creating compelling visual stories and authentic brand experiences." />
+    <meta name="keywords" content="videography, photography, digital design, creative portfolio, brand design, social media content, visual storytelling" />
+    <meta name="author" content="Leila Graham" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Leila Graham - Creative Portfolio" />
+    <meta property="og:description" content="Creative professional specializing in videography, photography, and digital design. Creating compelling visual stories and authentic brand experiences." />
+    <meta property="og:image" content="images/about-page.jpg" />
+    <meta property="og:url" content="https://leilagraham.com" /> <!-- Update with your actual domain -->
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    
+    <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="styles.css" as="style">
+    
     <link rel="stylesheet" href="styles.css" />
     <style>
       .page-transition {
@@ -162,12 +182,58 @@
         </div>
       </section>
 
+      <!-- Image Grid Section -->
+      <section class="image-grid-section">
+        <div class="straight-container">
+          <div class="straight-content">
+            <div class="image-grid">
+              <img 
+                src="https://via.placeholder.com/400x400/f5f5f5/666666?text=Image+1" 
+                alt="Placeholder Image 1" 
+                class="grid-image"
+                loading="lazy"
+              />
+              <img 
+                src="https://via.placeholder.com/400x400/f5f5f5/666666?text=Image+2" 
+                alt="Placeholder Image 2" 
+                class="grid-image"
+                loading="lazy"
+              />
+              <img 
+                src="https://via.placeholder.com/400x400/f5f5f5/666666?text=Image+3" 
+                alt="Placeholder Image 3" 
+                class="grid-image"
+                loading="lazy"
+              />
+              <img 
+                src="https://via.placeholder.com/400x400/f5f5f5/666666?text=Image+4" 
+                alt="Placeholder Image 4" 
+                class="grid-image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="contact-section">
           <div class="straight-container">
           <div class="straight-content">
             <h2>Let's create something together!</h2>
-            <form id="contact-form" action="https://formspree.io/f/xaneavwg" method="POST">
-              <input type="text" name="name" placeholder="name" required />
+            <form id="contact-form" action="https://formspree.io/f/xaneavwg" method="POST" novalidate>
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="name"
+                  placeholder="name" 
+                  required 
+                  minlength="2"
+                  pattern="[A-Za-z\s]+"
+                  title="Please enter a valid name (letters and spaces only)"
+                />
+                <span class="error-message" id="name-error"></span>
+              </div>
               <input type="email" name="_replyto" placeholder="email" required />
               <textarea
                 name="message"

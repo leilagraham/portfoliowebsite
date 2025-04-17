@@ -90,26 +90,68 @@ const themeManager = {
 // Initialize theme manager immediately
 themeManager.init();
 
-// Mobile Navigation
-const burger = document.querySelector(".burger");
-const nav = document.querySelector(".nav-links");
-const navLinks = document.querySelectorAll(".nav-links li");
+// Mobile Navigation Enhancement
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav-links');
+const navLinks = document.querySelectorAll('.nav-links li');
+const dropdowns = document.querySelectorAll('.dropdown');
 
-burger.addEventListener("click", () => {
+burger.addEventListener('click', () => {
   // Toggle Navigation
-  nav.classList.toggle("nav-active");
-
+  nav.classList.toggle('nav-active');
+  
+  // Toggle body scroll
+  document.body.classList.toggle('menu-open');
+  
   // Animate Links
   navLinks.forEach((link, index) => {
     if (link.style.animation) {
-      link.style.animation = "";
+      link.style.animation = '';
     } else {
       link.style.animation = `fadeInUp 0.5s ease forwards ${index / 7 + 0.3}s`;
     }
   });
-
+  
   // Burger Animation
-  burger.classList.toggle("toggle");
+  burger.classList.toggle('toggle');
+});
+
+// Handle dropdowns on mobile
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768) {
+    if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('nav-active')) {
+      nav.classList.remove('nav-active');
+      document.body.classList.remove('menu-open');
+      burger.classList.remove('toggle');
+      
+      navLinks.forEach(link => {
+        link.style.animation = '';
+      });
+    }
+  }
+});
+
+// Close mobile menu when window is resized above mobile breakpoint
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    nav.classList.remove('nav-active');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('toggle');
+    
+    navLinks.forEach(link => {
+      link.style.animation = '';
+    });
+  }
 });
 
 // Portfolio Filtering

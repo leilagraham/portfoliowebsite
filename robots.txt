@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://leilagraham.com/sitemap.xml
+
+Disallow: /private/
+Disallow: /admin/ 

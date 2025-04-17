@@ -748,3 +748,44 @@ section,
     height: 20px;
   }
 }
+
+/* Image Grid Section */
+.image-grid-section {
+  padding: 4rem 0;
+  background-color: var(--bg-primary);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.grid-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-image:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive adjustments for image grid */
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
